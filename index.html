@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shivam Biolumina Pvt Ltd</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* ===== Nav collaboration badge ===== */
+        .nav-list li.nav-collab {
+            display: flex;
+            align-items: center;
+            position: relative;
+            margin-left: 0.7rem;
+            padding-left: 1.2rem;
+        }
+
+        .nav-list li.nav-collab::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 1px;
+            height: 28px;
+            background: linear-gradient(to bottom, transparent, rgba(26, 95, 74, 0.28), transparent);
+        }
+
+        .nav-list li.nav-collab .collab-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.7rem;
+            padding: 0.34rem 0.38rem 0.34rem 1rem;
+            border: 1px solid rgba(26, 95, 74, 0.16);
+            border-radius: 999px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(233, 243, 238, 0.8));
+            box-shadow: 0 1px 2px rgba(16, 58, 45, 0.05), 0 8px 20px -12px rgba(16, 58, 45, 0.45);
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s ease, border-color 0.35s ease;
+        }
+
+        .nav-list li.nav-collab .collab-copy {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.2;
+        }
+
+        .nav-list li.nav-collab .collab-eyebrow {
+            font-size: 0.56rem;
+            font-weight: 600;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: rgba(26, 95, 74, 0.62);
+        }
+
+        .nav-list li.nav-collab .collab-name {
+            font-size: 0.82rem;
+            font-weight: 600;
+            white-space: nowrap;
+            color: var(--primary-color, #1a5f4a);
+        }
+
+        .nav-list li.nav-collab .collab-name span {
+            font-size: 0.72rem;
+            font-weight: 500;
+            opacity: 0.6;
+        }
+
+        .nav-list li.nav-collab .collab-logo-well {
+            width: 38px;
+            height: 38px;
+            flex-shrink: 0;
+            display: grid;
+            place-items: center;
+            border-radius: 50%;
+            background: #fff;
+            box-shadow: inset 0 0 0 1px rgba(26, 95, 74, 0.12), 0 2px 6px rgba(16, 58, 45, 0.14);
+        }
+
+        .nav-list li.nav-collab .collab-logo {
+            display: block;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            object-fit: contain;
+        }
+
+        /* light sweep on hover */
+        .nav-list li.nav-collab .collab-badge::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            background: linear-gradient(115deg, transparent 30%, rgba(255, 255, 255, 0.75) 50%, transparent 70%);
+            transform: translateX(-130%);
+            transition: transform 0.85s ease;
+        }
+
+        .nav-list li.nav-collab .collab-badge:hover::after {
+            transform: translateX(130%);
+        }
+
+        .nav-list li.nav-collab .collab-badge:hover {
+            transform: translateY(-2px);
+            border-color: rgba(26, 95, 74, 0.34);
+            box-shadow: 0 2px 4px rgba(16, 58, 45, 0.06), 0 16px 28px -14px rgba(16, 58, 45, 0.55);
+        }
+
+        /* tighten up before the nav collapses */
+        @media (max-width: 1150px) {
+            .nav-collab { margin-left: 0.4rem; padding-left: 0.8rem; }
+            .collab-eyebrow { display: none; }
+            .collab-name { font-size: 0.74rem; }
+            .collab-name span { display: none; }
+            .collab-badge { gap: 0.5rem; padding: 0.3rem 0.3rem 0.3rem 0.8rem; }
+            .collab-logo-well { width: 32px; height: 32px; }
+            .collab-logo { width: 27px; height: 27px; }
+        }
+
+        /* mobile / collapsed nav: full badge, centred */
+        @media (max-width: 992px) {
+            .nav-collab { margin: 0.9rem 0 0; padding-left: 0; justify-content: center; }
+            .nav-collab::before { display: none; }
+            .collab-eyebrow { display: block; }
+            .collab-name { font-size: 0.82rem; }
+            .collab-name span { display: inline; }
+            .collab-badge { gap: 0.7rem; padding: 0.34rem 0.38rem 0.34rem 1rem; }
+            .collab-logo-well { width: 38px; height: 38px; }
+            .collab-logo { width: 32px; height: 32px; }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <div class="preloader">
+        <div class="loader">
+            <div class="windmill">
+                <div class="blade"></div>
+                <div class="blade"></div>
+                <div class="blade"></div>
+                <div class="blade"></div>
+            </div>
+        </div>
+    </div>
+
+    <header class="header">
+        <div class="container">
+            <a href="index.html#" class="logo">
+                <span class="logo-icon"><img src="logo.jpeg" alt="Shivam Biolumina Pvt Ltd logo"></span>
+                <span class="logo-text">Shivam <span class="highlight">Biolumina</span> Pvt Ltd</span>
+            </a>
+            <nav class="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link active">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="products.html" class="nav-link">Products</a></li>
+                    <li><a href="blog.html" class="nav-link">Blog</a></li>
+                    <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+                    <li class="nav-collab">
+                        <a href="https://www.thermocareboilers.com" target="_blank" rel="noopener" class="collab-badge"
+                            title="In collaboration with Thermocare Boilers Pvt. Ltd.">
+                            <span class="collab-copy">
+                                <span class="collab-eyebrow">In collaboration with</span>
+                                <span class="collab-name">Thermocare Boilers <span>Pvt. Ltd.</span></span>
+                            </span>
+                            <span class="collab-logo-well">
+                                <img src="data:image/png;base64,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" alt="Thermocare Boilers logo" class="collab-logo">
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+                <div class="mobile-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="hero-marquee image-marquee" style="background: rgba(26, 95, 74, 0.03); border-top: 1px solid rgba(26, 95, 74, 0.08); border-bottom: 1px solid rgba(26, 95, 74, 0.08); padding: 1.2rem 0; margin-top: 85px; margin-bottom: 0;">
+        <div class="marquee-track">
+            <div class="marquee-content">
+                <img src="Hindustan_Petroleum_Logo.svg_.png" alt="Hindustan Petroleum Logo" class="omc-logo-img">
+                <span class="marquee-dot" style="color: var(--primary-color);">•</span>
+                <img src="Bharat_Petroleum_logo.svg_.png" alt="Bharat Petroleum Logo" class="omc-logo-img">
+                <span class="marquee-dot" style="color: var(--primary-color);">•</span>
+                <img src="Indian_Oil_Logo.svg_.png" alt="Indian Oil Logo" class="omc-logo-img">
+                <span class="marquee-dot" style="color: var(--primary-color);">•</span>
+                <img src="Hindustan_Petroleum_Logo.svg_.png" alt="Hindustan Petroleum Logo" class="omc-logo-img">
+                <span class="marquee-dot" style="color: var(--primary-color);">•</span>
+                <img src="Bharat_Petroleum_logo.svg_.png" alt="Bharat Petroleum Logo" class="omc-logo-img">
+                <span class="marquee-dot" style="color: var(--primary-color);">•</span>
+                <img src="Indian_Oil_Logo.svg_.png" alt="Indian Oil Logo" class="omc-logo-img">
+                <span class="marquee-dot" style="color: var(--primary-color);">•</span>
+            </div>
+            <div class="marquee-content" aria-hidden="true">
+                <img src="Hindustan_Petroleum_Logo.svg_.png" alt="Hindustan Petroleum Logo" class="omc-logo-img">
+                <span class="marquee-dot" style="color: var(--primary-color);">•</span>
+                <img src="Bharat_Petroleum_logo.svg_.png" alt="Bharat Petroleum Logo" class="omc-logo-img">
+                <span class="marquee-dot" style="color: var(--primary-color);">•</span>
+                <img src="Indian_Oil_Logo.svg_.png" alt="Indian Oil Logo" class="omc-logo-img">
+                <span class="marquee-dot" style="color: var(--primary-color);">•</span>
+                <img src="Hindustan_Petroleum_Logo.svg_.png" alt="Hindustan Petroleum Logo" class="omc-logo-img">
+                <span class="marquee-dot" style="color: var(--primary-color);">•</span>
+                <img src="Bharat_Petroleum_logo.svg_.png" alt="Bharat Petroleum Logo" class="omc-logo-img">
+                <span class="marquee-dot" style="color: var(--primary-color);">•</span>
+                <img src="Indian_Oil_Logo.svg_.png" alt="Indian Oil Logo" class="omc-logo-img">
+                <span class="marquee-dot" style="color: var(--primary-color);">•</span>
+            </div>
+        </div>
+    </div>
+
+    <section id="home" class="hero">
+        <div class="hero-bg">
+            <div class="particles" id="particles"></div>
+            <div class="hero-gradient"></div>
+            <div class="biofuel-container">
+                <div class="fuel-droplet droplet-1"></div>
+                <div class="fuel-droplet droplet-2"></div>
+                <div class="fuel-droplet droplet-3"></div>
+                <div class="fuel-droplet droplet-4"></div>
+                <div class="fuel-barrel barrel-1"></div>
+                <div class="fuel-barrel barrel-2"></div>
+                <div class="fuel-molecule molecule-1"></div>
+                <div class="fuel-molecule molecule-2"></div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title animate-item">
+                    <span class="title-line">Leading Biodiesel<br>Plant Manufacturing &<br>Biodiesel Supplier to
+                        OMCs</span>
+                </h1>
+                <p class="hero-description animate-item">End-to-end tender compliance expertise delivering high-quality
+                    biodiesel plants and machinery with state-of-the-art production systems.</p>
+                <div class="hero-buttons animate-item">
+                    <a href="about.html" class="btn btn-primary">
+                        <span>About Us</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="shivam_biolumina_brochure.pdf" class="btn btn-secondary" download>
+                        <span>Download Brochure</span>
+                        <i class="fas fa-download"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="biolumina-intro section">
+        <div class="container">
+            <div class="intro-wrapper">
+                <div class="intro-content reveal-left">
+                    <span class="section-subtitle">Discover Our Essence</span>
+                    <h2>What is <span class="highlight">Biolumina</span>?</h2>
+                    <p>Biolumina represents the intersection of biological innovation and industrial luminescence. It is
+                        our proprietary approach to sustainable energy, where we harness the power of organic waste and
+                        transform it into high-performance, clean-burning biodiesel.</p>
+
+                    <h3 style="margin-top: 2rem; color: var(--primary-color);">What Is Biodiesel?</h3>
+                    <p>Biodiesel is a renewable, cleaner-burning diesel fuel made from biological sources such as used
+                        cooking oil (UCO), non-edible oils, animal fats, and other biomass feedstocks. It helps reduce
+                        carbon emissions and pollution compared with fossil diesel.</p>
+
+                    <a href="about.html" class="btn btn-secondary">Our Story</a>
+                </div>
+                <div class="intro-visual reveal-right">
+                    <div class="glass-card">
+                        <div class="card-icon">
+                            <i class="fas fa-microscope"></i>
+                        </div>
+                        <h3>How Is It Made?</h3>
+                        <p style="font-size: 0.95rem; margin-bottom: 1.5rem;">Biodiesel is typically produced through
+                            <strong>transesterification</strong>, where fats or oils react with an alcohol (methanol) in
+                            the presence of a catalyst to form methyl esters (biodiesel) and glycerin.
+                        </p>
+                        <ul style="font-size: 0.9rem;">
+                            <li><i class="fas fa-check-circle"></i> High Conversion Efficiency</li>
+                            <li><i class="fas fa-check-circle"></i> Carbon-Neutral Production</li>
+                            <li><i class="fas fa-check-circle"></i> Renewable Material Sourcing</li>
+                        </ul>
+                    </div>
+                    <div class="visual-blob"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services-teaser section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Core Expertise</span>
+                <h2 class="section-title">Fueling the Future</h2>
+            </div>
+            <div class="teaser-grid">
+                <div class="teaser-card reveal-up" data-delay="0">
+                    <div class="teaser-icon">
+                        <i class="fas fa-industry"></i>
+                    </div>
+                    <h3>Plant Manufacturing</h3>
+                    <p>Complete turnkey biodiesel plant solutions designed for maximum efficiency, high conversion
+                        rates, and sustainable fuel production. Built with advanced technology to ensure reliability and
+                        scalability.</p>
+                </div>
+                <div class="teaser-card reveal-up" data-delay="0.1">
+                    <div class="teaser-icon">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <h3>Raw Materials & Specialized Chemicals</h3>
+                    <p>High-quality feedstock and performance-grade chemicals essential for biodiesel production.
+                        Carefully sourced to ensure consistency, efficiency, and optimal processing results.</p>
+                </div>
+                <div class="teaser-card reveal-up" data-delay="0.2">
+                    <div class="teaser-icon">
+                        <i class="fas fa-gas-pump"></i>
+                    </div>
+                    <h3>Biodiesel Supply (Private Seller)</h3>
+                    <p>Reliable supply of premium biodiesel tailored for industrial and commercial use. Ensuring
+                        consistent quality, eco-friendly performance, and adherence to industry standards.</p>
+                </div>
+                <div class="teaser-card reveal-up" data-delay="0.3">
+                    <div class="teaser-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>Industrial Equipments</h3>
+                    <p>Boiler, Thermic Oil Heater, Thermic Oil Cooling Tower, Storage Tanks, Fabricating Tanks, Valves,
+                        RO Water Plants, and Pumps.</p>
+                    <a href="index.html#equipments" class="btn-text"
+                        style="color: var(--primary-color); font-weight: 600; text-decoration: none; display: flex; align-items: center; gap: 0.5rem; margin-top: 1rem;">View
+                        Details <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="teaser-card reveal-up" data-delay="0.4">
+                    <div class="teaser-icon">
+                        <i class="fas fa-clipboard-check"></i>
+                    </div>
+                    <h3>Testing & Quality Assurance</h3>
+                    <p>Comprehensive testing and quality control services to ensure biodiesel meets regulatory
+                        standards. Advanced analysis for purity, performance, and safety compliance.</p>
+                    <div class="certification-info">
+                        <p
+                            style="font-size: 0.85rem; font-weight: 700; color: var(--primary-color); margin-bottom: 0.5rem;">
+                            <i class="fas fa-certificate"></i> Certified BPCL Supplier
+                        </p>
+                        <ul style="font-size: 0.85rem; color: var(--text-pale); list-style: none; padding-left: 0;">
+                            <li><i class="fas fa-check-circle"
+                                    style="color: var(--primary-color); font-size: 0.8rem;"></i> BPCL Certified</li>
+                            <li><i class="fas fa-check-circle"
+                                    style="color: var(--primary-color); font-size: 0.8rem;"></i> BIS 15607:2002</li>
+                            <li><i class="fas fa-check-circle"
+                                    style="color: var(--primary-color); font-size: 0.8rem;"></i> ISO 14060:2017</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="teaser-card reveal-up" data-delay="0.5">
+                    <div class="teaser-icon">
+                        <i class="fas fa-vial"></i>
+                    </div>
+                    <h3>Glycerine Plant Manufacturing</h3>
+                    <p>Specialized plants for efficient glycerine recovery and purification as a valuable biodiesel
+                        byproduct. Designed to maximize yield and commercial value.</p>
+                </div>
+            </div>
+            <div style="text-align: center;">
+                <a href="services.html" class="btn btn-primary">Explore All Services</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="equipments" class="equipment-showcase section">
+        <div class="container">
+            <div class="equipment-showcase-wrapper">
+                <div class="equipment-intro reveal-left">
+                    <span class="section-subtitle">Premium Machinery</span>
+                    <h2 class="section-title" style="margin-left: 0; text-align: left;">Industrial <span
+                            class="highlight">Equipment</span> Showcase</h2>
+                    <p class="equipment-lead">We supply and fabricate state-of-the-art industrial components engineered
+                        for durability and peak performance in demanding industrial environments.</p>
+                    <div class="equipment-hero-img">
+                        <img src="plantimg6.jpeg" alt="Industrial Equipment Showcase">
+                        <div class="img-badge">Precision Engineered</div>
+                    </div>
+                </div>
+                <div class="equipment-grid reveal-right">
+                    <div class="eq-card">
+                        <div class="eq-icon"><i class="fas fa-fire-alt"></i></div>
+                        <div class="eq-info">
+                            <h4>Boiler</h4>
+                            <p>High-efficiency steam generation system designed for thermal processing.</p>
+                        </div>
+                    </div>
+                    <div class="eq-card">
+                        <div class="eq-icon"><i class="fas fa-temperature-high"></i></div>
+                        <div class="eq-info">
+                            <h4>Thermic Oil Heater</h4>
+                            <p>Advanced heat transfer solutions for high-temperature chemical reactions.</p>
+                        </div>
+                    </div>
+                    <div class="eq-card">
+                        <div class="eq-icon"><i class="fas fa-fan"></i></div>
+                        <div class="eq-info">
+                            <h4>Thermic Oil Cooling Tower</h4>
+                            <p>Efficient waste heat rejection maintaining optimal operational temperatures.</p>
+                        </div>
+                    </div>
+                    <div class="eq-card">
+                        <div class="eq-icon"><i class="fas fa-database"></i></div>
+                        <div class="eq-info">
+                            <h4>Storage Tanks</h4>
+                            <p>Heavy-duty vessels for feedstock, intermediates, and final products.</p>
+                        </div>
+                    </div>
+                    <div class="eq-card">
+                        <div class="eq-icon"><i class="fas fa-tools"></i></div>
+                        <div class="eq-info">
+                            <h4>Fabricating Tanks</h4>
+                            <p>Custom-engineered tanks for specialized mixing and settling processes.</p>
+                        </div>
+                    </div>
+                    <div class="eq-card">
+                        <div class="eq-icon"><i class="fas fa-dharmachakra"></i></div>
+                        <div class="eq-info">
+                            <h4>Valves</h4>
+                            <p>Precision flow control components for liquid and gas management.</p>
+                        </div>
+                    </div>
+                    <div class="eq-card">
+                        <div class="eq-icon"><i class="fas fa-tint"></i></div>
+                        <div class="eq-info">
+                            <h4>RO Water Plants</h4>
+                            <p>High-purity water systems for wash cycles and boiler maintenance.</p>
+                        </div>
+                    </div>
+                    <div class="eq-card">
+                        <div class="eq-icon"><i class="fas fa-faucet"></i></div>
+                        <div class="eq-info">
+                            <h4>Pumps</h4>
+                            <p>Robust fluid movement solutions for viscous oils and chemicals.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="products-teaser" class="products-teaser section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Biofuel Outputs</span>
+                <h2 class="section-title">Fueling Industrial Success</h2>
+            </div>
+            <div class="product-grid">
+                <div class="product-card reveal-up" data-delay="0.1">
+                    <div class="product-thumb">
+                        <img src="laboimg1.jpeg" alt="Biodiesel B100"
+                            onerror="this.src='https://images.unsplash.com/photo-1581291417004-6ad87845f92c?auto=format&fit=crop&q=80&w=400'">
+                    </div>
+                    <div class="product-info">
+                        <h3>Biodiesel (B100)</h3>
+                        <p>High-purity renewable diesel fuel meeting BIS 15607:2022 standards for sustainable transport.
+                        </p>
+                        <a href="products.html#fuel-products" class="btn-link">Learn More <i
+                                class="fas fa-chevron-right"></i></a>
+                    </div>
+                </div>
+                <div class="product-card reveal-up" data-delay="0.2">
+                    <div class="product-thumb">
+                        <img src="labimg2.jpeg" alt="Crude Glycerine"
+                            onerror="this.src='https://images.unsplash.com/photo-1532187875605-183881409d94?auto=format&fit=crop&q=80&w=400'">
+                    </div>
+                    <div class="product-info">
+                        <h3>Crude Glycerine</h3>
+                        <p>80% purity natural by-product essential for pharma, textile, and chemical industries.</p>
+                        <a href="products.html#fuel-products" class="btn-link">Learn More <i
+                                class="fas fa-chevron-right"></i></a>
+                    </div>
+                </div>
+                <div class="product-card reveal-up" data-delay="0.3">
+                    <div class="product-thumb">
+                        <img src="labimg3.jpeg" alt="Fatty Acid"
+                            onerror="this.src='https://images.unsplash.com/photo-1554522213-9aa73ae44998?auto=format&fit=crop&q=80&w=400'">
+                    </div>
+                    <div class="product-info">
+                        <h3>Industrial Fatty Acid</h3>
+                        <p>Derived during esterification, serving as a critical raw material for detergents and rubber.
+                        </p>
+                        <a href="products.html#fuel-products" class="btn-link">Learn More <i
+                                class="fas fa-chevron-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="mandates-section section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Our Vision</span>
+                <h2 class="section-title">Mandates & Future Targets</h2>
+            </div>
+            <div class="mandates-grid">
+                <div class="mandate-box reveal-left">
+                    <span class="target-badge">Goal 2030</span>
+                    <h4>20% Ethanol Blending</h4>
+                    <p>Supporting the national mandate to achieve 20% ethanol blending in petrol by 2030 to reduce
+                        dependency on fossil fuel imports.</p>
+                </div>
+                <div class="mandate-box reveal-right">
+                    <span class="target-badge">Goal 2030</span>
+                    <h4>5% Biodiesel Blending</h4>
+                    <p>According to National Policy contributing towards the target of 5% biodiesel blending in diesel
+                        by 2030, fostering a cleaner and greener transportation sector.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="different-section section">
+        <div class="container">
+            <div class="different-wrapper">
+                <div class="section-header">
+                    <span class="section-subtitle">The Shivam Edge</span>
+                    <h2 class="section-title">Why We Are Different</h2>
+                </div>
+                <div class="different-highlight reveal-up">
+                    "We don't just build plants; we engineer sustainable ecosystems that empower businesses to lead the
+                    energy transition."
+                </div>
+                <div class="choose-us-grid">
+                    <div class="checklist-item reveal-up" data-delay="0">
+                        <i class="fas fa-check-double"></i>
+                        <span>Tender Compliance Expertise</span>
+                    </div>
+                    <div class="checklist-item reveal-up" data-delay="1">
+                        <i class="fas fa-check-double"></i>
+                        <span>State-of-the-art Technology</span>
+                    </div>
+                    <div class="checklist-item reveal-up" data-delay="2">
+                        <i class="fas fa-check-double"></i>
+                        <span>End-to-end Project Management</span>
+                    </div>
+                    <div class="checklist-item reveal-up" data-delay="3">
+                        <i class="fas fa-check-double"></i>
+                        <span class="no-koh">NO KOH REQUIRED</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="products" class="portfolio section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Plant Catalog</span>
+                <h2 class="section-title">Featured Products</h2>
+            </div>
+            <div class="portfolio-grid">
+                <div class="portfolio-item reveal-up" data-category="biodiesel">
+                    <div class="portfolio-image">
+                        <img src="plantimg1.jpeg" alt="Advanced Bio Diesel Plant">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-info">
+                                <span class="portfolio-category">BIO DIESEL PLANT</span>
+                                <h4>Advanced Bio Diesel Facility</h4>
+                                <a href="shivam_biolumina_brochure.pdf" class="portfolio-link" download>Download Specs
+                                    <i class="fas fa-download"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item reveal-up" data-category="distillation">
+                    <div class="portfolio-image">
+                        <img src="plantimg3.jpeg" alt="Distillation Unit">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-info">
+                                <span class="portfolio-category">DISTILLATION</span>
+                                <h4>Industrial Distillation Setup</h4>
+                                <a href="shivam_biolumina_brochure.pdf" class="portfolio-link" download>Download Specs
+                                    <i class="fas fa-download"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item reveal-up" data-category="refining">
+                    <div class="portfolio-image">
+                        <img src="plantimg4.jpeg" alt="Deodorization System">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-info">
+                                <span class="portfolio-category">REFINING</span>
+                                <h4>Vacuum Deodorization System</h4>
+                                <a href="shivam_biolumina_brochure.pdf" class="portfolio-link" download>Download Specs
+                                    <i class="fas fa-download"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="portfolio-more reveal-up">
+                <a href="products.html" class="btn btn-primary">View Full Product Catalog</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Get In Touch</span>
+                <h2 class="section-title">Contact Us</h2>
+            </div>
+            <div class="contact-wrapper">
+                <div class="contact-info reveal-left">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Phone</h4>
+                            <p>+91 8960648508</p>
+                            <p>+91 9918660270</p>
+                            <p>+91 6393213527</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <p>shivambiolumina@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Address</h4>
+                            <p style="margin-bottom: 0.8rem; font-size: 0.9rem;"><strong>Manufacturing:</strong> Shivam
+                                Biolumina pvt. ltd., Fatehpur-Amauli Road, Jahanabad, Uttar Pradesh, India</p>
+                            <p style="font-size: 0.9rem;"><strong>Marketing:</strong> Future Edge, E W S 28, Dabauli
+                                West, Gadarian Purwa, Kanpur, Uttar Pradesh, India</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Working Hours</h4>
+                            <p>7:30 AM - 7:30 PM</p>
+                            <p>Monday to Saturday</p>
+                        </div>
+                    </div>
+                    <div class="whatsapp-cta">
+                        <a href="https://wa.me/918960648508" class="whatsapp-btn">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>Connect on WhatsApp</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="contact-form-wrapper reveal-right">
+                    <form class="contact-form">
+                        <div class="form-group">
+                            <input type="text" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" placeholder="Your Phone">
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Your Message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content reveal-up">
+                <h2>Ready for Advanced Biodiesel Solutions?</h2>
+                <p>Contact us today to learn about our state-of-the-art biodiesel plants and manufacturing systems</p>
+                <a href="index.html#" class="btn btn-primary btn-large">
+                    <i class="fas fa-download"></i>
+                    <span>Request Quote</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-main">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-about">
+                        <a href="index.html" class="footer-logo">
+                            <img src="logo.jpeg" alt="Shivam Biolumina Pvt Ltd logo" class="footer-logo-img">
+                        </a>
+                        <p>Leading manufacturer of high-quality, advanced biodiesel plants and machinery with a focus on
+                            sustainability and innovation for clean renewable energy solutions.</p>
+                        <div class="footer-cert-pair">
+                            <img src="iso.webp" alt="ISO Certified">
+                            <img src="bis.jpeg" alt="BIS Certified">
+                        </div>
+                        <div class="footer-social">
+                            <a href="index.html#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="index.html#"><i class="fab fa-twitter"></i></a>
+                            <a href="index.html#"><i class="fab fa-instagram"></i></a>
+                            <a href="index.html#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="index.html#">Our Team</a></li>
+                            <li><a href="index.html#">Projects</a></li>
+                            <li><a href="products.html">Products</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="index.html#">Investors</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Services</h4>
+                        <ul>
+                            <li><a href="index.html#">Bio Diesel Plant</a></li>
+                            <li><a href="index.html#">Distillation Plant</a></li>
+                            <li><a href="index.html#">Deodorization</a></li>
+                            <li><a href="index.html#">Separation Plant</a></li>
+                            <li><a href="index.html#">Raw Materials</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-newsletter">
+                        <h4>Contact Info</h4>
+                        <p style="font-size: 0.85rem;"><strong>Manufacturing:</strong> Fatehpur-Amauli Road, Jahanabad, Uttar Pradesh, India</p>
+                        <p><strong>Email:</strong> shivambiolumina@gmail.com</p>
+                        <form class="newsletter-form">
+                            <input type="email" placeholder="Your Email">
+                            <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                        </form>
+                    </div>
+                </div>
+                <div class="footer-credit"
+                    style="text-align: center; margin-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1rem;">
+                    <p class="agency-sparkle">Marketed By - <a href="https://futureedgedigitalmarketing.com"
+                            target="_blank" style="color: inherit; text-decoration: none;">Future Edge Digital Marketing
+                            Agency</a> | Powered By - <a href="https://cachebugs.site" target="_blank"
+                            style="color: inherit; text-decoration: none; border-bottom: 1px dashed;">Cachebugs</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; Copyright 2026 by Shivam Biolumina Pvt Ltd. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <div id="biofuel-popup-modal" class="popup-modal">
+        <div class="popup-overlay"></div>
+        <div class="popup-container">
+            <button class="popup-close-btn" aria-label="Close modal">&times;</button>
+            <div class="popup-content-wrapper">
+                <div class="popup-image-column">
+                    <img src="biofuel&#32;pump.jpeg" alt="Biofuel Pump Station Setup">
+                    <div class="popup-image-badge">Turnkey Franchise Setup</div>
+                </div>
+                <div class="popup-text-column">
+                    <span class="popup-subtitle">GREEN ENERGY REVOLUTION</span>
+                    <h2>Own Your Biofuel Pump Station</h2>
+                    <p class="popup-lead">Establish a commercial biodiesel filling station with complete assistance from Shivam Biolumina.</p>
+                    
+                    <div class="popup-features">
+                        <div class="popup-feature-item">
+                            <div class="feature-icon"><i class="fas fa-handshake"></i></div>
+                            <div class="feature-text">
+                                <strong>End-to-End Consultation</strong>
+                                <span>Turnkey planning, licensing, and compliance guidance.</span>
+                            </div>
+                        </div>
+                        <div class="popup-feature-item">
+                            <div class="feature-icon"><i class="fas fa-tools"></i></div>
+                            <div class="feature-text">
+                                <strong>Installation Guidance</strong>
+                                <span>Infrastructural setup to get your pump fully operational.</span>
+                            </div>
+                        </div>
+                        <div class="popup-feature-item">
+                            <div class="feature-icon"><i class="fas fa-truck-loading"></i></div>
+                            <div class="feature-text">
+                                <strong>Uninterrupted Quality Supply</strong>
+                                <span>Consistent, high-grade biodiesel meeting BIS standards.</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="popup-cta-box">
+                        <a href="index.html#contact" class="btn btn-primary popup-cta-btn">Become a Partner Today <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

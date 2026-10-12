@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Shivam Biolumina Pvt Ltd</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon"><img src="logo.jpeg" alt="Shivam Biolumina Pvt Ltd logo"></span>
+                <span class="logo-text">Shivam <span class="highlight">Biolumina</span> Pvt Ltd</span>
+            </a>
+            <nav class="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="products.html" class="nav-link active">Products</a></li>
+                    <li><a href="blog.html" class="nav-link">Blog</a></li>
+                    <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="mobile-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-hero">
+        <div class="container">
+            <div class="hero-title-box reveal-up">
+                <span class="hero-subtitle-small">Industrial Excellence</span>
+                <h1>PLANT CATALOG</h1>
+            </div>
+        </div>
+    </section>
+
+    <section id="products" class="portfolio section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Industrial Excellence</span>
+                <h2 class="section-title">Plant & Machinery</h2>
+            </div>
+            <div class="portfolio-filters reveal-up">
+                <button class="filter-btn active" data-filter="all">All Units</button>
+                <button class="filter-btn" data-filter="biodiesel">Bio Diesel Plant</button>
+                <button class="filter-btn" data-filter="distillation">Distillation</button>
+                <button class="filter-btn" data-filter="machinery">Machinery</button>
+                <button class="filter-btn" data-filter="refining">Refining</button>
+            </div>
+            <div class="portfolio-grid">
+                <div class="portfolio-item reveal-up" data-category="biodiesel refining">
+                    <div class="portfolio-image">
+                        <img src="plantimg1.jpeg" alt="Advanced Bio Diesel Plant">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-info">
+                                <span class="portfolio-category">BIO DIESEL PLANT</span>
+                                <h4>Advanced Bio Diesel Facility</h4>
+                                <a href="shivam_biolumina_brochure.pdf" class="portfolio-link" download>Download Specs <i
+                                        class="fas fa-download"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item reveal-up" data-category="distillation machinery">
+                    <div class="portfolio-image">
+                        <img src="plantimg3.jpeg" alt="Distillation Unit">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-info">
+                                <span class="portfolio-category">DISTILLATION</span>
+                                <h4>Industrial Distillation Setup</h4>
+                                <a href="shivam_biolumina_brochure.pdf" class="portfolio-link" download>Download Specs <i
+                                        class="fas fa-download"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item reveal-up" data-category="refining machinery">
+                    <div class="portfolio-image">
+                        <img src="plantimg4.jpeg" alt="Deodorization System">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-info">
+                                <span class="portfolio-category">REFINING</span>
+                                <h4>Vacuum Deodorization System</h4>
+                                <a href="shivam_biolumina_brochure.pdf" class="portfolio-link" download>Download Specs <i
+                                        class="fas fa-download"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item reveal-up" data-category="machinery">
+                    <div class="portfolio-image">
+                        <img src="plantimg5.jpeg" alt="Separation Machinery">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-info">
+                                <span class="portfolio-category">MACHINERY</span>
+                                <h4>Biofuel Centrifuge Separator</h4>
+                                <a href="shivam_biolumina_brochure.pdf" class="portfolio-link" download>Download Specs <i
+                                        class="fas fa-download"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="fuel-products" class="fuel-products section" style="background: #fdfbf7;">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Renewable Outputs</span>
+                <h2 class="section-title">Core Biofuel Products</h2>
+            </div>
+            
+            <div class="fuel-grid">
+                <div class="fuel-card reveal-up">
+                    <div class="fuel-visual">
+                        <img src="laboimg1.jpeg" alt="Biodiesel B100 Product" onerror="this.src='https://images.unsplash.com/photo-1581291417004-6ad87845f92c?auto=format&fit=crop&q=80&w=800'">
+                        <div class="fuel-badge">BIS 15607:2022</div>
+                    </div>
+                    <div class="fuel-content">
+                        <h3>BIODIESEL (B100)</h3>
+                        <p class="fuel-description">Biodiesel is a renewable, biodegradable liquid fuel produced through transesterification. In its pure B100 form, it can be used directly in compression ignition diesel engines or blended as per OMC specifications.</p>
+                        <ul class="fuel-specs">
+                            <li><i class="fas fa-leaf"></i> Up to 78% CO₂ Emission Reduction</li>
+                            <li><i class="fas fa-check-circle"></i> Low Sulphur (BS-VI Compliant)</li>
+                            <li><i class="fas fa-vial"></i> Multi-feedstock (UCO, Animal Fat, Tallow)</li>
+                        </ul>
+                        <div class="fuel-details">
+                            <p>Every production batch is tested for kinematic viscosity, flash point, water content, and cetane number. Our B100 meets BIS 15607:2022 and IS 1460:2017 standards, ensuring top-tier performance for automotive and industrial sectors.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="fuel-card reverse reveal-up">
+                    <div class="fuel-content">
+                        <h3>Crude Glycerine</h3>
+                        <p class="fuel-description">A natural by-product of biodiesel manufacturing, separated and treated to reach approximately 80% purity. This versatile co-product is essential for multiple industrial supply chains.</p>
+                        <div class="fuel-apps">
+                            <h4>Industrial Applications</h4>
+                            <div class="app-tags">
+                                <span>Pharmaceuticals</span>
+                                <span>Animal Feed</span>
+                                <span>Biogas Feedstock</span>
+                                <span>Textile Softening</span>
+                            </div>
+                        </div>
+                        <p class="fuel-details">From the chemical industry's production of polyols to the textile industry's softening agents, our high-purity crude glycerine meets the demanding needs of India's commercial buyers.</p>
+                    </div>
+                    <div class="fuel-visual">
+                        <img src="labimg2.jpeg" alt="Crude Glycerine Product" onerror="this.src='https://images.unsplash.com/photo-1532187875605-183881409d94?auto=format&fit=crop&q=80&w=800'">
+                        <div class="fuel-badge">80% Purity</div>
+                    </div>
+                </div>
+
+                <div class="fuel-card reveal-up">
+                    <div class="fuel-visual fatty-acid-visual">
+                        <img src="labimg3.jpeg" alt="Fatty Acid Product" onerror="this.src='https://images.unsplash.com/photo-1554522213-9aa73ae44998?auto=format&fit=crop&q=80&w=800'">
+                        <div class="fuel-badge">Industrial Grade</div>
+                    </div>
+                    <div class="fuel-content">
+                        <h3>Industrial Fatty Acid</h3>
+                        <p class="fuel-description">Derived during the esterification stage, fatty acids are a valuable co-product particularly when processing high FFA feedstocks like UCO and tallow.</p>
+                        <div class="fuel-apps">
+                            <h4>Primary Markets</h4>
+                            <div class="app-tags">
+                                <span>Soap & Detergent</span>
+                                <span>Cosmetics</span>
+                                <span>Rubber & Plastics</span>
+                            </div>
+                        </div>
+                        <p class="fuel-details">Used as emollients in skincare and processing aids in rubber compounding, our fatty acids serve as a critical raw material for the manufacturing sector.</p>
+                    </div>
+                </div>
+
+                <div class="fuel-card reverse reveal-up">
+                    <div class="fuel-content">
+                        <h3>Biofuel Pump Setup & Supply Partner</h3>
+                        <p class="fuel-description">Become a part of the green energy revolution by owning your very own Biofuel Pump. We serve as your trusted partner at every step of your green energy journey, making the setup of your retail dispensing station for vehicles seamless and highly rewarding.</p>
+                        
+                        <div class="fuel-apps" style="margin-bottom: 1.5rem;">
+                            <h4>Support Areas</h4>
+                            <div class="app-tags">
+                                <span>End-to-End Consultation</span>
+                                <span>Installation Guidance</span>
+                                <span>Uninterrupted Quality Supply</span>
+                            </div>
+                        </div>
+
+                        <ul class="fuel-specs" style="margin-bottom: 1.5rem;">
+                            <li><i class="fas fa-leaf"></i> Quality Supply: Consistent, high-grade biodiesel that meets BIS standards</li>
+                            <li><i class="fas fa-shipping-fast"></i> Timely Delivery: Punctual logistics to ensure your pumps never run dry</li>
+                            <li><i class="fas fa-hands-helping"></i> Reliable Support: Dedicated, ongoing collaboration for retail success</li>
+                            <li><i class="fas fa-cogs"></i> Complete Assistance: Turnkey guidance from planning to execution</li>
+                        </ul>
+
+                        <p class="fuel-details">We provide comprehensive assistance for entrepreneurs wishing to establish a commercial biodiesel filling station. From the initial consultation and infrastructural installation guidance to getting your pump fully operational, we make your bio-energy journey easy and hassle-free. Whether you are looking for complete assistance to launch a new Bio-Diesel Pump or seeking a reliable supply partner for your existing station, we provide the trusted collaboration you need to serve the automotive sector efficiently.</p>
+                    </div>
+                    <div class="fuel-visual pump-visual">
+                        <img src="biofuel&#32;pump.jpeg" alt="Biofuel Pump Setup & Supply Partner" onerror="this.src='https://images.unsplash.com/photo-1599740831464-58f80c6511b8?auto=format&fit=crop&q=80&w=800'">
+                        <div class="fuel-badge">Green Retail</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="portfolio-more">
+                <a href="products.html#contact" class="btn btn-primary">Bulk Supply Inquiry</a>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="footer-main">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-about">
+                        <a href="index.html" class="footer-logo">
+                            <img src="logo.jpeg" alt="Shivam Biolumina Pvt Ltd logo" class="footer-logo-img">
+                        </a>
+                        <p>Leading manufacturer of high-quality, advanced biodiesel plants and machinery with a focus on
+                            sustainability and innovation for clean renewable energy solutions.</p>
+                        <div class="footer-cert-pair">
+                            <img src="iso.webp" alt="ISO Certified">
+                            <img src="bis.jpeg" alt="BIS Certified">
+                        </div>
+                        <div class="footer-social">
+                            <a href="products.html#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="products.html#"><i class="fab fa-twitter"></i></a>
+                            <a href="products.html#"><i class="fab fa-instagram"></i></a>
+                            <a href="products.html#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="products.html#">Our Team</a></li>
+                            <li><a href="products.html#">Projects</a></li>
+                            <li><a href="products.html">Products</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="products.html#">Investors</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Services</h4>
+                        <ul>
+                            <li><a href="products.html#">Bio Diesel Plant</a></li>
+                            <li><a href="products.html#">Distillation Plant</a></li>
+                            <li><a href="products.html#">Deodorization</a></li>
+                            <li><a href="products.html#">Separation Plant</a></li>
+                            <li><a href="products.html#">Raw Materials</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-newsletter">
+                        <h4>Contact Info</h4>
+                        <p style="font-size: 0.85rem;"><strong>Manufacturing:</strong> Fatehpur-Amauli Road, Jahanabad, Uttar Pradesh, India</p>
+                        <p><strong>Email:</strong> shivambiolumina@gmail.com</p>
+                        <form class="newsletter-form">
+                            <input type="email" placeholder="Your Email">
+                            <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="footer-credit"
+                    style="text-align: center; margin-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1rem;">
+                    <p class="agency-sparkle">Marketed By - <a href="https://futureedgedigitalmarketing.com" target="_blank" style="color: inherit; text-decoration: none;">Future Edge Digital Marketing Agency</a> | Powered By - <a href="https://cachebugs.site" target="_blank" style="color: inherit; text-decoration: none; border-bottom: 1px dashed;">Cachebugs</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; Copyright 2026 by Shivam Biolumina Pvt Ltd. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <div id="biofuel-popup-modal" class="popup-modal">
+        <div class="popup-overlay"></div>
+        <div class="popup-container">
+            <button class="popup-close-btn" aria-label="Close modal">&times;</button>
+            <div class="popup-content-wrapper">
+                <div class="popup-image-column">
+                    <img src="biofuel&#32;pump.jpeg" alt="Biofuel Pump Station Setup">
+                    <div class="popup-image-badge">Turnkey Franchise Setup</div>
+                </div>
+                <div class="popup-text-column">
+                    <span class="popup-subtitle">GREEN ENERGY REVOLUTION</span>
+                    <h2>Own Your Biofuel Pump Station</h2>
+                    <p class="popup-lead">Establish a commercial biodiesel filling station with complete assistance from Shivam Biolumina.</p>
+                    
+                    <div class="popup-features">
+                        <div class="popup-feature-item">
+                            <div class="feature-icon"><i class="fas fa-handshake"></i></div>
+                            <div class="feature-text">
+                                <strong>End-to-End Consultation</strong>
+                                <span>Turnkey planning, licensing, and compliance guidance.</span>
+                            </div>
+                        </div>
+                        <div class="popup-feature-item">
+                            <div class="feature-icon"><i class="fas fa-tools"></i></div>
+                            <div class="feature-text">
+                                <strong>Installation Guidance</strong>
+                                <span>Infrastructural setup to get your pump fully operational.</span>
+                            </div>
+                        </div>
+                        <div class="popup-feature-item">
+                            <div class="feature-icon"><i class="fas fa-truck-loading"></i></div>
+                            <div class="feature-text">
+                                <strong>Uninterrupted Quality Supply</strong>
+                                <span>Consistent, high-grade biodiesel meeting BIS standards.</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="popup-cta-box">
+                        <a href="products.html#contact" class="btn btn-primary popup-cta-btn">Become a Partner Today <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
