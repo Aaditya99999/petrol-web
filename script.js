@@ -161,12 +161,23 @@ backToTop.addEventListener('click', () => {
         behavior: 'smooth'
     });
 });
+function submitForm(form) {
+    return fetch(form.getAttribute('action') || 'contact.php', {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+    }).then(response => response.json().catch(() => ({
+        success: false,
+        message: 'Sorry, something went wrong. Please try again.'
+    })));
+}
+
 const contactForm = document.querySelector('.contact-form');
 if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
         e.preventDefault();
 
-        const name = contactForm.querySelector('input[type="text"]');
+        const name = contactForm.querySelector('input[name="name"]');
         const email = contactForm.querySelector('input[type="email"]');
         const message = contactForm.querySelector('textarea');
 
@@ -180,17 +191,26 @@ if (contactForm) {
         submitBtn.textContent = 'Sending...';
         submitBtn.disabled = true;
 
-        setTimeout(() => {
-            submitBtn.textContent = 'Message Sent!';
-            submitBtn.style.background = '#00d084';
-
-            setTimeout(() => {
-                contactForm.reset();
-                submitBtn.textContent = originalText;
-                submitBtn.disabled = false;
-                submitBtn.style.background = '';
-            }, 2000);
-        }, 1500);
+        submitForm(contactForm)
+            .then(result => {
+                if (result.success) {
+                    submitBtn.textContent = 'Message Sent!';
+                    submitBtn.style.background = '#00d084';
+                    contactForm.reset();
+                } else {
+                    alert(result.message);
+                }
+            })
+            .catch(() => {
+                alert('Network error. Please try again or contact us on WhatsApp.');
+            })
+            .finally(() => {
+                setTimeout(() => {
+                    submitBtn.textContent = originalText;
+                    submitBtn.disabled = false;
+                    submitBtn.style.background = '';
+                }, 2000);
+            });
     });
 }
 const newsletterForm = document.querySelector('.newsletter-form');
@@ -198,16 +218,23 @@ if (newsletterForm) {
     newsletterForm.addEventListener('submit', (e) => {
         e.preventDefault();
 
-        const input = newsletterForm.querySelector('input');
-        const email = input.value;
+        const input = newsletterForm.querySelector('input[type="email"]');
 
-        if (!email) {
+        if (!input.value) {
             alert('Please enter your email');
             return;
         }
 
-        input.value = '';
-        alert('Thank you for subscribing!');
+        submitForm(newsletterForm)
+            .then(result => {
+                if (result.success) {
+                    newsletterForm.reset();
+                }
+                alert(result.message);
+            })
+            .catch(() => {
+                alert('Network error. Please try again.');
+            });
     });
 }
 const navLinks2 = document.querySelectorAll('.nav-link');

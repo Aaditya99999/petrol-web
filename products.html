@@ -209,7 +209,7 @@
                         <p class="fuel-details">We provide comprehensive assistance for entrepreneurs wishing to establish a commercial biodiesel filling station. From the initial consultation and infrastructural installation guidance to getting your pump fully operational, we make your bio-energy journey easy and hassle-free. Whether you are looking for complete assistance to launch a new Bio-Diesel Pump or seeking a reliable supply partner for your existing station, we provide the trusted collaboration you need to serve the automotive sector efficiently.</p>
                     </div>
                     <div class="fuel-visual pump-visual">
-                        <img src="biofuel&#32;pump.jpeg" alt="Biofuel Pump Setup & Supply Partner" onerror="this.src='https://images.unsplash.com/photo-1599740831464-58f80c6511b8?auto=format&fit=crop&q=80&w=800'">
+                        <img src="biofuel-pump.jpeg" alt="Biofuel Pump Setup & Supply Partner" onerror="this.src='https://images.unsplash.com/photo-1599740831464-58f80c6511b8?auto=format&fit=crop&q=80&w=800'">
                         <div class="fuel-badge">Green Retail</div>
                     </div>
                 </div>
@@ -266,8 +266,10 @@
                         <h4>Contact Info</h4>
                         <p style="font-size: 0.85rem;"><strong>Manufacturing:</strong> Fatehpur-Amauli Road, Jahanabad, Uttar Pradesh, India</p>
                         <p><strong>Email:</strong> shivambiolumina@gmail.com</p>
-                        <form class="newsletter-form">
-                            <input type="email" placeholder="Your Email">
+                        <form class="newsletter-form" action="contact.php" method="post">
+                            <input type="hidden" name="form_type" value="newsletter">
+                            <input type="text" name="website" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
+                            <input type="email" name="email" placeholder="Your Email" required>
                             <button type="submit"><i class="fas fa-paper-plane"></i></button>
                         </form>
                     </div>
@@ -296,7 +298,7 @@
             <button class="popup-close-btn" aria-label="Close modal">&times;</button>
             <div class="popup-content-wrapper">
                 <div class="popup-image-column">
-                    <img src="biofuel&#32;pump.jpeg" alt="Biofuel Pump Station Setup">
+                    <img src="biofuel-pump.jpeg" alt="Biofuel Pump Station Setup">
                     <div class="popup-image-badge">Turnkey Franchise Setup</div>
                 </div>
                 <div class="popup-text-column">

@@ -4093,3 +4093,12 @@ body.menu-open::before {
         margin: 0 2rem;
     }
 }
+/* Spam honeypot field for forms (hidden from visitors) */
+.hp-field {
+    position: absolute !important;
+    left: -9999px !important;
+    width: 1px !important;
+    height: 1px !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+}

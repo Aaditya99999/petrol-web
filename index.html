@@ -670,18 +670,20 @@
                     </div>
                 </div>
                 <div class="contact-form-wrapper reveal-right">
-                    <form class="contact-form">
+                    <form class="contact-form" action="contact.php" method="post">
+                        <input type="hidden" name="form_type" value="contact">
+                        <input type="text" name="website" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
                         <div class="form-group">
-                            <input type="text" placeholder="Your Name" required>
+                            <input type="text" name="name" placeholder="Your Name" required>
                         </div>
                         <div class="form-group">
-                            <input type="email" placeholder="Your Email" required>
+                            <input type="email" name="email" placeholder="Your Email" required>
                         </div>
                         <div class="form-group">
-                            <input type="tel" placeholder="Your Phone">
+                            <input type="tel" name="phone" placeholder="Your Phone">
                         </div>
                         <div class="form-group">
-                            <textarea placeholder="Your Message" rows="5" required></textarea>
+                            <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary">Send Message</button>
                     </form>
@@ -749,8 +751,10 @@
                         <h4>Contact Info</h4>
                         <p style="font-size: 0.85rem;"><strong>Manufacturing:</strong> Fatehpur-Amauli Road, Jahanabad, Uttar Pradesh, India</p>
                         <p><strong>Email:</strong> shivambiolumina@gmail.com</p>
-                        <form class="newsletter-form">
-                            <input type="email" placeholder="Your Email">
+                        <form class="newsletter-form" action="contact.php" method="post">
+                            <input type="hidden" name="form_type" value="newsletter">
+                            <input type="text" name="website" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
+                            <input type="email" name="email" placeholder="Your Email" required>
                             <button type="submit"><i class="fas fa-paper-plane"></i></button>
                         </form>
                     </div>
@@ -781,7 +785,7 @@
             <button class="popup-close-btn" aria-label="Close modal">&times;</button>
             <div class="popup-content-wrapper">
                 <div class="popup-image-column">
-                    <img src="biofuel&#32;pump.jpeg" alt="Biofuel Pump Station Setup">
+                    <img src="biofuel-pump.jpeg" alt="Biofuel Pump Station Setup">
                     <div class="popup-image-badge">Turnkey Franchise Setup</div>
                 </div>
                 <div class="popup-text-column">
